@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/index.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <title>Welcome Page</title>
+    </head>
+    <body>
+        <div class="header">
+        <% if( user != undefined || user != null) {%>
+        <h1>siema <%= user %> </h1>
+        <a id="user-ico" href="/dashboard"><i class="fas fa-user"></i></a>
+        
+        <% } else { %>
+        <a href="/t/login">Login</a>
+        <% } %>
+    </div>
+
+</body>
+</html>
