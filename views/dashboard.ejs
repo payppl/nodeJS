@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dashboard.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <title>Dashboard</title>
 </head>
 <body>
     <div class="header">
         <h1>Dashboard</h1>
+        <a href="/">Main page</a>
         <a href="/chat">Chat</a>
     </div>
     <%- include('./partials/messages')%>
@@ -24,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-6" for="password">Password:</label>
-                    <input class="col-6" type="password" name="password" id="password" value="<%= password %>">
+                    <input class="col-6" type="password" name="password" id="password" value="nothing_is_here">
                 </div>
                 <div class="form-group">
                     <label class="col-6" for="email">Email:</label>
@@ -35,6 +37,7 @@
         </div>
         <div class="user-info-edit">
             <a href="/t/logout"><input type="button" id="button-logout" value="Logout"></a>
+            <a href="/t/changepassword"><input type="button" id="button-change-password" value="change password"></a>
             <a href="/t/save"><input type="submit" id="button-save" value="Save"></a>
         </form>
         </div>

@@ -1,3 +1,11 @@
+:root {
+    --bgcolors: #000000;
+    --buttoncolors: white;
+    --textcolors: white;
+    --bluecolor: white;
+    --greencolor: black;
+    --secondbgcolor: #0d0d0d;
+}
 * {
     font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
     font-size: 16px;
@@ -12,61 +20,129 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #435165;
-}
-.header {
-   
-    width: 100%;
-    height: 10%;
-
-}
-.header h1 {
-    text-align: center;
-    color: black;
-    font-size: 35px;
+    background-color: var(--bgcolors);
 }
 h1 {
     margin: 0px;
     padding: 0px;
+}
+.header {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 12%;
 
 }
+.header h1 {
+    width: 50%;
+    color: var(--textcolors);
+    font-size: 35px;
+}
+
+.header a {
+    font-size: 16px;
+    text-align: right;
+}
+
+.header a:visited, a:link {
+    color: var(--textcolors);
+    text-decoration: none;
+}
+.header a:hover {
+    filter: brightness(0.80);
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .header a {
+        margin: 5px;
+    }
+}
+@media screen and (min-width: 601px) {
+    .header a {
+        margin: 10px;
+    }
+}
+
 .center {
+    display: flex;
     width: 100%;
     height: 85%;
 }
 .user-info {
-    background-color: #ffffff;
-    width: 85%;
-    height: 75%;
+    border: 1px solid var(--bgcolors);
+    border-radius: 5px;
+    background-color: var(--secondbgcolor);
+    width: 60%;
     margin: auto;
-    
+    display: flex;
+    flex-flow: column nowrap;
+    height: 75%;
 }
 .user-info-container {
     height: 83%;
-    padding-top: 20px ;
-    padding-left: 200px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
 }
+.row {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
 .form-group {
     display: flex;
     margin-bottom: 5px;
 }
 .form-group label {
-    flex: 0 0 100px;
+    margin: 10px;
+    font-size: 24px;
+    flex: 0 0 110px;
     border-radius: 2px;
-    border: 1px solid #ccc;
+    border: 0px;
+    border-left: 1px solid black;
+    color: var(--bluecolor);
 }
 .form-group input {
-    flex: 0;
+    font-size: 24px;
+    margin: 10px;
+    padding: 5px;
+    width: 100%;
+    border: 0px;
+    background-color: var(--bgcolors);
+    color: var(--bluecolor);
 }
+.form-group input:focus {
+    outline: none;
+}
+
 .user-info-edit {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap row;
+    margin-top: 10px;
+    background-color: var(--secondbgcolor);
     width: 100%;
     height: 17%;
-    border-top: 1px solid black;
     text-align: center;
 }
 .user-info-edit input {
-   margin: 7px auto;
+   margin: 0 auto;
 }
+
 
 #button-logout {
     width: 90px;
@@ -76,79 +152,108 @@ h1 {
     border: 0;
     cursor: pointer;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--secondbgcolor);
     transition: background-color 0.2s;
 }
 #button-save {
     width: 90px;
     font-size: 15px;
     padding: 5px;
-    background-color: rgb(4, 219, 4);
+    background-color: white;
     border: 0;
     cursor: pointer;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--secondbgcolor);
     transition: background-color 0.2s;
 }
+#button-change-password {
+    width: 150px;
+    font-size: 15px;
+    padding: 5px;
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--secondbgcolor);
+    transition: background-color 0.2s;
+}
+
+.user-info-edit a:hover {
+    filter: brightness(0.80);
+}
+
+
+@media screen and (min-width: 800px) {
+    .user-info-edit input {
+        margin: 10px;
+    }
+
+}
+@media screen and (max-width: 600px) {
+
+    .user-info-edit {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        height: auto;
+        background-color: var(--secondbgcolor);
+    }
+    .user-info-edit a{
+        width: 90%;
+    }
+    #button-logout,#button-save, #button-change-password{
+        width: 80%;
+    }
+    .user-info-edit input {
+        margin: 10px;
+    }
+}
+@media screen and (max-width: 599px) {
+    .user-info-edit input {
+        margin: 7px;
+    }
+    .form-group label {
+        flex: 0 0 70px;
+        font-size: 16px;
+    }
+    .form-group input {
+        margin: 10px;
+        font-size: 16px;
+        width: auto;
+    }
+    .form-group {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 450px) {
+    .form-group input {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 450px) {
+    .form-group {
+        height: 83%;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .form-group label {
+        flex: 0 0 10px;
+        margin: 10px;
+    }
+    .form-group input {
+        width: auto;
+        text-align: center;
+    }
+}
+
+
 .footer{
+    color: var(--bluecolor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 5%;
-}
-
-#t1 {
-    background-color: orange;
-    margin: auto;
-    margin-bottom: 10px;
-    width: fit-content;
-    text-align: center;
-    padding: 10px;
-    border-radius: 2px;
-    -moz-animation: cssAnimation 0.25s ease-in 5s forwards;
-    /* Firefox */
-    -webkit-animation: cssAnimation 0.25s ease-in 5s forwards;
-    /* Safari and Chrome */
-    -o-animation: cssAnimation 0.25s ease-in 5s forwards;
-    /* Opera */
-    animation: cssAnimation 0.25s ease-in 5s forwards;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-}
-#t2 {
-    background-color: greenyellow;
-    margin: auto;
-    margin-bottom: 10px;
-    width: fit-content;
-    text-align: center;
-    padding: 10px;
-    border-radius: 2px;
-    -moz-animation: cssAnimation 0.25s ease-in 5s forwards;
-    /* Firefox */
-    -webkit-animation: cssAnimation 0.25s ease-in 5s forwards;
-    /* Safari and Chrome */
-    -o-animation: cssAnimation 0.25s ease-in 5s forwards;
-    /* Opera */
-    animation: cssAnimation 0.25s ease-in 5s forwards;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-}
-
-@keyframes cssAnimation {
-    to {
-        width:0;
-        height:0;
-        overflow:hidden;
-        transform: translateY(0);
-        padding: 0;
-        margin: 0;
-    }
-}
-@-webkit-keyframes cssAnimation {
-    to {
-        width:0;
-        height:0;
-        overflow:hidden;
-        transform: translateY(0);
-        padding: 0;
-        margin: 0;
-    }
+    height: 10%;
 }

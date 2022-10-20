@@ -9,16 +9,21 @@ const connection = mysql.createConnection({
 	database : 'nodelogin'
 });
 
-//login handle
+
+
 router.get('/login', (req,res)=> {
     res.render('login');
 });
 router.get('/register', (req,res)=> {
-	res.render('register');
-})
+    res.render('register');
+});
+
+
 router.post('/login',(request, response)=> {
+	
 	let username = request.body.username;
 	let password = request.body.password;
+	
 	if (username && password) {
 		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
 			if (error) throw error;
@@ -62,7 +67,6 @@ router.post('/register', (request,response)=> {
 	} else {
 		connection.query('INSERT INTO accounts(username,password,email) VALUES (?,?,?)', [username, password,email], function(error, results, fields) {
 			if (error) throw error;
-			//response.redirect('/login', {});	
 			response.render('login', {
 				success_msg: 'Register succesfully'
 			})
@@ -76,15 +80,12 @@ router.post('/edit', (request,response)=> {
 	let email = request.body.email;
 	connection.query('UPDATE accounts SET password = ?, email = ? WHERE username = ?',[password,email,username], function(error, results, fields) {
 		if (error) throw error;
-		//response.redirect('/login', {});	
 		request.flash('success_msg', 'Saved changes!');
 		response.redirect('/dashboard');
 		response.end();
 	});
 });
-router.get('/chat', (req,res)=> {
-	res.redirect('/chat');
-});
+
 router.get('/logout', (req,res)=> {
 	req.flash('success_msg', 'Now logged out');
 	res.redirect('/login');

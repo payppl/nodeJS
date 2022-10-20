@@ -1,0 +1,33 @@
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  background-color: black;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+#messages {
+    color:white;
+    list-style-type: none;
+    padding: 0px;
+    margin: 5px;
+    max-height: 400px;
+    overflow-y: scroll;
+    width: 400px;
+    scrollbar-width: 5px;
+    background-color: darkgray;
+}
+#users-online {
+    color: white;
+}

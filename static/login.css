@@ -4,17 +4,19 @@
     font-size: 16px;
 }
 body {
-    background-color: #435165;
+    padding: 0 px;
+    margin: 0px;
+    background-color: black;
 }
 .login {
     width: 400px;
-    background-color: #ffffff;
+    background-color: black;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     margin: 100px auto;
 }
 .login h1 {
     text-align: center;
-    color: #5b6574;
+    color: white;
     font-size: 24px;
     padding: 20px 0 20px 0;
     border-bottom: 1px solid #dee0e4;
@@ -31,84 +33,42 @@ body {
     align-items: center;
     width: 50px;
     height: 50px;
-    background-color: #3274d6;
-    color: #ffffff;
+    background-color: white;
+    color: black;
 }
 .login form input[type="password"], .login form input[type="text"], .login form input[type="email"] {
     width: 310px;
     height: 50px;
-    border: 1px solid #dee0e4;
+    border: 1px solid white;
+    border-left: 1px solid black;
+    color: black;
     margin-bottom: 20px;
     padding: 0 15px;
+    background-color: white;
+    box-shadow: 0 0 0px 1000px #fff inset;
 }
-#t1 {
-    background-color: orange;
-    margin: auto;
-    margin-bottom: 10px;
-    width: fit-content;
-    text-align: center;
-    padding: 10px;
-    border-radius: 2px;
-    -moz-animation: cssAnimation 0.25s ease-in 5s forwards;
-    /* Firefox */
-    -webkit-animation: cssAnimation 0.25s ease-in 5s forwards;
-    /* Safari and Chrome */
-    -o-animation: cssAnimation 0.25s ease-in 5s forwards;
-    /* Opera */
-    animation: cssAnimation 0.25s ease-in 5s forwards;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
+input:focus {
+    background-color: black;
+    outline: none;
+    caret-color: grey;
 }
-#t2 {
-    background-color: greenyellow;
-    margin: auto;
-    margin-bottom: 10px;
-    width: fit-content;
-    text-align: center;
-    padding: 10px;
-    border-radius: 2px;
-    -moz-animation: cssAnimation 0.25s ease-in 5s forwards;
-    /* Firefox */
-    -webkit-animation: cssAnimation 0.25s ease-in 5s forwards;
-    /* Safari and Chrome */
-    -o-animation: cssAnimation 0.25s ease-in 5s forwards;
-    /* Opera */
-    animation: cssAnimation 0.25s ease-in 5s forwards;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
+p {
+    color: white;
 }
-@keyframes cssAnimation {
-    to {
-        width:0;
-        height:0;
-        overflow:hidden;
-        transform: translateY(0);
-        padding: 0;
-        margin: 0;
-    }
-}
-@-webkit-keyframes cssAnimation {
-    to {
-        width:0;
-        height:0;
-        visibility:hidden;
-        transform: translateY(0);
-        padding: 0;
-        margin: 0;
-    }
-}
+
+
 .login form input[type="submit"] {
     width: 100%;
     padding: 15px;
-   margin-top: 20px;
-    background-color: #3274d6;
+    margin-top: 20px;
+    background-color: white;
     border: 0;
     cursor: pointer;
     font-weight: bold;
-    color: #ffffff;
+    color: black;
     transition: background-color 0.2s;
 }
 .login form input[type="submit"]:hover {
-  background-color: #2868c7;
+  background-color: rgb(14, 14, 14);
     transition: background-color 0.2s;
 }

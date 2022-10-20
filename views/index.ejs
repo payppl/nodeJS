@@ -8,15 +8,28 @@
         <title>Welcome Page</title>
     </head>
     <body>
-        <div class="header">
         <% if( user != undefined || user != null) {%>
-        <h1>siema <%= user %> </h1>
-        <a id="user-ico" href="/dashboard"><i class="fas fa-user"></i></a>
-        
+            <div class="content">
+                <h1>Welcome <%= fullusername %> !</h1>
+                <a id="chat" href="/chat">Chat</a>
+                <div class="dropdown">
+                <a id="user-ico"><%= user %></a>
+                <span class="drop-content">
+                    <a href="/dashboard">settings</a>
+                    <a id="logout" href="/t/logout">Logout</a>
+                </span>
+                </div>
+            </div>
         <% } else { %>
-        <a href="/t/login">Login</a>
+            <div class="content-login">
+                <h1>Welcome!</h1>
+                <a href="/t/login"><input type="button" value="Login"></a>
+            </div>
         <% } %>
-    </div>
+        <script>
+            let user = document.getElementById('user-ico');
+            
 
+        </script>
 </body>
 </html>
