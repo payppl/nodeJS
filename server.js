@@ -23,7 +23,6 @@ app.use(session({
     saveUninitialized: true
 }));
 app.use(express.urlencoded({ extended: false }));
-//app.use(express.json());
 app.use(express.static(path.join(__dirname, 'static')));
 
 server.listen(port, () => {
@@ -44,7 +43,6 @@ app.use((req,res,next)=> {
 app.use('/', require('./routes/index'));
 app.use('/t', require('./routes/users'));
 
-//server.listen(port, () => console.log('server started'));
 
 
 
