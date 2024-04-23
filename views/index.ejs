@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,26 +10,49 @@
     <body>
         <% if( user != undefined || user != null) {%>
             <div class="content">
+                <div class="Top">
                 <h1>Welcome <%= fullusername %> !</h1>
-                <a id="chat" href="/chat">Chat</a>
+                
                 <div class="dropdown">
-                <a id="user-ico"><%= user %></a>
+                <a id="user-ico"><%= fullusername %></a>
                 <span class="drop-content">
-                    <a href="/dashboard">settings</a>
+                    <a href="/chat">Chat</a>
+                    <a href="/dashboard">Settings</a>
                     <a id="logout" href="/t/logout">Logout</a>
+                    
                 </span>
                 </div>
-            </div>
+                </div>
+                <a target="_blank" href="mtasa://51.83.182.33:20496">GTA SA</a>
+                <!-- #region -->
+                <!--
+                    <div class="center">
+                        <div id="NewsBox">
+                            <p id="NewsBox-header">Cos</p>
+                            <p id="NewsBox-content">ashkgjasdg;lasjd gas;dl jasd;gjasldkg<p>
+                            </div>
+                            <div id="NewsBox">
+                                <p id="NewsBox-header">Cos</p>
+                                <p id="NewsBox-content">ashkgjasdg;lasjd gas;dl jasd;gjasldkg<p>
+                                </div>
+                                <div id="NewsBox">
+                                    <p id="NewsBox-header">Cos</p>
+                                    <p id="NewsBox-content">ashkgjasdg;lasjd gas;d asdf sajdf ;asdf k asdf l jasd;gjasldkg<p>
+                                    </div>
+                                    <div id="NewsBox">
+                                        <p id="NewsBox-header">Cos</p>
+                                        <p id="NewsBox-content"><a href="/gamble">gamble here</a><p>
+                                        </div>
+                                    </div>
+                                -->
+                                    <!-- #endregion -->
+                                </div>
         <% } else { %>
             <div class="content-login">
                 <h1>Welcome!</h1>
                 <a href="/t/login"><input type="button" value="Login"></a>
+                
             </div>
         <% } %>
-        <script>
-            let user = document.getElementById('user-ico');
-            
-
-        </script>
 </body>
 </html>

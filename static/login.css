@@ -9,9 +9,8 @@ body {
     background-color: black;
 }
 .login {
-    width: 400px;
+    width: fit-content;
     background-color: black;
-    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     margin: 100px auto;
 }
 .login h1 {
@@ -72,3 +71,8 @@ p {
   background-color: rgb(14, 14, 14);
     transition: background-color 0.2s;
 }
+@media only screen and (min-width: 400px) {
+    .login {
+        width: 400px;
+    }
+  }

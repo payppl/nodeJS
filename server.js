@@ -4,18 +4,23 @@ const { Server } = require('socket.io');
 const flash = require('connect-flash');
 const passport = require('passport');
 const express = require('express');
-const http = require('http');
+const https = require('https');
 const path = require('path');
+const fs = require('fs');
 const { Socket } = require('dgram');
 const app = express();
 const port  = 5000;
 
-
-const server = http.createServer(app);
+certfile = fs.readFileSync("/etc/letsencrypt/live/jbpind.pl/cert.pem");
+keyfile = fs.readFileSync("/etc/letsencrypt/live/jbpind.pl/privkey.pem");
+const server = https.createServer(
+    {cert: certfile, key: keyfile, passphrase: "@1&4FReZhG&&#12$3"},
+    app);
 const router = express.Router();
 const io = new Server(server);
 
 app.set('view engine', 'ejs');
+app.set('views', `${__dirname}/views`);
 app.use(expresejslayout);
 app.use(session({
     secret: 'secret',

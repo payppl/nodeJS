@@ -38,7 +38,6 @@ router.get("/chat", ensureAuth, (req, res) => {
       username: req.session.username,
     };
     users.add(User);
-    console.log(Array.from(users));
     req.io.emit("users-list", Array.from(users));
     socket.once("disconnect", () => {
       users.delete(User);
@@ -57,5 +56,24 @@ router.get("/dashboard", ensureAuth, (req, res) => {
     password: req.session.password,
   });
 });
-
+router.get("/gamble", ensureAuth, (req, res) => {
+  res.render("gamble", {
+    user: req.session.username,
+  });
+  req.io.once("connection", (socket) => {
+    const User = {
+      username: req.session.username,
+    };
+    const price = 10;
+    let currentprice = 0;
+    let person = "";
+    req.io.emit("getCurrentItem", price, currentprice, person);
+    socket.on("bidOn", (s) => {
+      currentprice += price;
+      console.log(currentprice)
+      person = req.session.username;
+      req.io.emit("bidOn", currentprice, person);
+    });
+  });
+});
 module.exports = router;

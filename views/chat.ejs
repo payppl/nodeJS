@@ -1,25 +1,41 @@
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/chat.css" rel="stylesheet" type="text/css">
+        <script src="/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <title>Chat Page</title>
+       
+    </head>
 <head>
-  <link href="/chat.css" rel="stylesheet" type="text/css">
-  <script src="/socket.io/socket.io.js"></script>
+
   
 </head>
 <body>
-  <div id="header">
-    <a href="/">Main Page</a>
-    </div>
   <div class="content">
-<div id="left">
-  <h1>Users Online</h1>
-  <div id="users">
+    <div class="Top">
+      <h1>Chat !</h1>
+      <div class="dropdown">
+        <a id="user-ico"><%= user %></a>
+        <span class="drop-content">
+          <a href="/">Main</a>
+          <a href="/dashboard">Settings</a>
+          <a id="logout" href="/t/logout">Logout</a>
+        </span>
+      </div>
+    </div>
+    
+    <div id="center">
+      <ul id="messages"></ul>
+      
+    </div>
+    <footer class="input-content">
+      <input type="text" id="send-input" placeholder="Write 'Hello Everyone!'">
+      <input type="submit" id="send-message" value="Send">
+    </footer>
   </div>
-</div>
-  <div id="center">
-  <ul id="messages"></ul>
-  <form action="">
-    <input type="text" id="send-input">
-    <input type="submit" id="send-message" value="Send">
-  </form>
-  </div>
-</div>
+  </div> 
 </body>
 <script src="/chat.js" ></script>
+</html>
